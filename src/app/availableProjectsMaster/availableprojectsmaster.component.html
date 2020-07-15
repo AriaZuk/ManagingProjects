@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-3">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link pill" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true" routerLink="/mastershome" >Masters Home</a>
+      <a class="nav-link active pill" id="v-pills-avpro-tab" data-toggle="pill" href="#v-pills-avpro" role="tab" aria-controls="v-pills-avpro" aria-selected="false" routerLink="/availableProjectsMaster">Available Projects</a>
+      <a class="nav-link pill" id="v-pills-supervisors-tab" data-toggle="pill" href="#v-pills-supervisors" role="tab" aria-controls="v-pills-supervisors" aria-selected="false" routerLink="/supervisorsMaster">Supervisors</a>
+      <a class="nav-link pill" id="v-pills-proprop-tab" data-toggle="pill" href="#v-pills-proprop" role="tab" aria-controls="v-pills-proprop" aria-selected="false" routerLink="/proposeProjectMaster">Project Proposal</a>
+      <a class="nav-link pill" id="v-pills-archive-tab" data-toggle="pill" href="#v-pills-archive" role="tab" aria-controls="v-pills-archive" aria-selected="false" routerLink="/archiveMaster">Archive</a>
+      <a *ngIf="isLoggedIn" class="nav-link pill" id="v-pills-myAcc-tab" data-toggle="pill" href="#v-pills-myAcc" role="tab" aria-controls="v-pills-myAcc" aria-selected="false" routerLink="/account">My Account</a>
+      <a *ngIf="isLoggedIn" class="nav-link pill" id="v-pills-pendingApp-tab" data-toggle="pill" href="#v-pills-pendingApp" role="tab" aria-controls="v-pills-pendingApp" aria-selected="false" routerLink="/pendingApplications">Pending Applications</a>
+      <a *ngIf="isLoggedIn" class="nav-link pill" id="v-pills-managePros-tab" data-toggle="pill" href="#v-pills-managePros" role="tab" aria-controls="v-pills-managePros" aria-selected="false" routerLink="/manageproject">Manage Projects</a>
+      <a *ngIf="isSupervisorLoggedIn" class="nav-link pill" id="v-pills-manageSups-tab" data-toggle="pill" href="#v-pills-manageSups" role="tab" aria-controls="v-pills-manageSups" aria-selected="false" routerLink="/manageSupervisors">Manage Supervisors</a>
+    </div>
+  </div>
+  <div class="col-9">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-avpro" role="tabpanel" aria-labelledby="v-pills-avpro-tab">Available Projects Master
+        <div *ngFor="let project of projects">
+          <div class="card" style="padding: 5px;"  *ngIf="project.type === 'Master'">
+            Title: {{project.title}} <br>
+            Supervisor: {{project.supervisor}} <br>
+            External Partners: {{project.externalPartner}} <br>
+            Student: {{project.student}} <br>
+            Outline: {{project.outline}} <br>
+            Tags: {{project.tags}}
+
+            <button type="button" class="btn btn-primary" style="width: 10%; margin-left: 85%;" data-toggle="modal"
+                    data-target="#exampleModal">Apply
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Apply for &#60;Project title here&#62; </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <input class="form-control" type="text" name="roomNO" placeholder="full name">
+                    <input class="form-control" type="email" name="email" placeholder="student@example.com">
+                    <textarea class="form-control" id="Textarea1" rows="3"
+                              placeholder="your message to the supervisor"></textarea>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Apply</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div></div>
+     </div>
+  </div>
+</div>

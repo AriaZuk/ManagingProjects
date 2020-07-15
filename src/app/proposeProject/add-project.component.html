@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-3">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link pill" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true" routerLink="/honourshome" >Honours Home</a>
+      <a class="nav-link pill" id="v-pills-avpro-tab" data-toggle="pill" href="#v-pills-avpro" role="tab" aria-controls="v-pills-avpro" aria-selected="false" routerLink="/availableprojects">Available Projects</a>
+      <a class="nav-link pill" id="v-pills-supervisors-tab" data-toggle="pill" href="#v-pills-supervisors" role="tab" aria-controls="v-pills-supervisors" aria-selected="false" routerLink="/supervisors">Supervisors</a>
+      <a class="nav-link active pill" id="v-pills-proprop-tab" data-toggle="pill" href="#v-pills-proprop" role="tab" aria-controls="v-pills-proprop" aria-selected="false" routerLink="/proposeProject">Project Proposal</a>
+      <a class="nav-link pill" id="v-pills-archive-tab" data-toggle="pill" href="#v-pills-archive" role="tab" aria-controls="v-pills-archive" aria-selected="false" routerLink="/archive">Archive</a>
+      <a *ngIf="isLoggedIn" class="nav-link pill" id="v-pills-myAcc-tab" data-toggle="pill" href="#v-pills-myAcc" role="tab" aria-controls="v-pills-myAcc" aria-selected="false" routerLink="/account">My Account</a>
+      <a *ngIf="isLoggedIn" class="nav-link pill" id="v-pills-pendingApp-tab" data-toggle="pill" href="#v-pills-pendingApp" role="tab" aria-controls="v-pills-pendingApp" aria-selected="false" routerLink="/pendingApplications">Pending Applications</a>
+      <a *ngIf="isLoggedIn" class="nav-link pill" id="v-pills-managePros-tab" data-toggle="pill" href="#v-pills-managePros" role="tab" aria-controls="v-pills-managePros" aria-selected="false" routerLink="/manageproject">Manage Projects</a>
+      <a *ngIf="isSupervisorLoggedIn" class="nav-link pill" id="v-pills-manageSups-tab" data-toggle="pill" href="#v-pills-manageSups" role="tab" aria-controls="v-pills-manageSups" aria-selected="false" routerLink="/manageSupervisors">Manage Supervisors</a>
+    </div>
+  </div>
+  <div class="col-9">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-proprop" role="tabpanel" aria-labelledby="v-pills-proprop-tab">
+        <div class="jumbotron bg-light">
+          <div align="center" class="container ">
+            <h3>Propose your own project</h3>
+            <form   action="/subscribe" method="post">
+              <fieldset style="padding:2px;">
+                <input class="form-control" type="text" name="roomNO" placeholder="full name">
+                <input class="form-control" type="text" name="extPart" placeholder="External Partner">
+                <input class="form-control" type="email" name="email" placeholder="student@example.com">
+                <select class="form-control" id="supervisor">
+                  <option>Supervisor 1</option>
+                  <option>Supervisor 2</option>
+                  <option>Supervisor 4</option>
+                </select>
+                <textarea class="form-control" id="Textarea1" rows="3"
+                          placeholder="your message to the supervisor"></textarea>
+                <button class="btn btn-primary">Apply</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+     </div>
+  </div>
+</div>

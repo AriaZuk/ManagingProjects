@@ -1,1 +1,63 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+$primary: rgb(255, 255, 255);
+
+body {
+    margin: 0;
+    font-family: Helvetica-light, sans-serif;
+    font-size: 18px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+
+header {
+    background: $primary;
+    padding: 1em 0;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    a.logo {
+        font-weight: bold;
+    }
+
+
+}
+
+h1 {
+    margin-top: 2em;
+}
+.nav-pills .nav-link.active {
+  background-color: #016938;
+}
+.col-3
+{
+  flex: 0 0 20%;
+  padding-right: 0;
+}
+.col-9
+{
+  flex: 0 0 80%;
+  padding-right: 1pc;
+  max-width: 80%;
+}
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+a.pill{color: #016938}
+.jumbotron {
+  padding-top:32px;
+  padding-bottom:32px;
+}
+.btn-primary
+{
+  background-color: #016938;
+  border-color: #016938;
+}

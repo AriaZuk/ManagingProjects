@@ -1,0 +1,18 @@
+<div align="center" class="jumbotron jumbotron-fluid bg-light">
+  <h1 class="text-center">Log In!</h1>
+<!--  [formGroup]="messageForm" (ngSubmit)="onSubmit()"-->
+  <div  align="center" class="container ">
+    <form   action="/subscribe" method="post">
+      <fieldset style="padding:2px;">
+        <input class="form-control" type="text" name="username" placeholder="username">
+        <input class="form-control" type="password" name="password" placeholder="password">
+        <button class="btn btn-primary">LOG IN</button>
+      </fieldset>
+    </form>
+  </div>
+
+
+
+  <h5 class="text-center" style="padding-top: 4pc;">Or sign in if you don't have an account yet.</h5>
+  <button type="button" class="btn btn-primary" routerLink="/signin">SIGN IN</button>
+</div>
